@@ -1,0 +1,37 @@
+﻿step,column,count,action
+deduplicate,*,0,drop exact duplicates
+trim,Sample_ID,0,strip whitespace
+trim,Shift,0,strip whitespace
+numeric_parse,Line_Speed_mpm,0,invalid -> missing
+numeric_parse,Current_ASD,0,invalid -> missing
+numeric_parse,Bath_Temp_C,0,invalid -> missing
+numeric_parse,Cu_Conc_gL,0,invalid -> missing
+numeric_parse,Additive_ppm,0,invalid -> missing
+numeric_parse,Jet_Pressure_bar,0,invalid -> missing
+numeric_parse,Edge_Current_Bias,0,invalid -> missing
+numeric_parse,Thick_Left_um,0,invalid -> missing
+numeric_parse,Thick_Center_um,0,invalid -> missing
+numeric_parse,Thick_Right_um,0,invalid -> missing
+numeric_parse,Thick_Mean_um,0,invalid -> missing
+numeric_parse,Thick_Range_um,0,invalid -> missing
+numeric_parse,Is_Out_of_Spec,0,invalid -> missing
+numeric_parse,Is_Nonuniform,0,invalid -> missing
+numeric_parse,Is_Anomaly,0,invalid -> missing
+physical_check,Line_Speed_mpm,0,nonpositive -> missing
+physical_check,Current_ASD,0,nonpositive -> missing
+physical_check,Cu_Conc_gL,0,nonpositive -> missing
+physical_check,Additive_ppm,0,nonpositive -> missing
+physical_check,Jet_Pressure_bar,0,nonpositive -> missing
+shift_check,Shift,0,derive from timestamp
+derived_check,Thick_Mean_um,0,recompute from measurements
+derived_check,Thick_Range_um,0,recompute from measurements
+label_check,Is_Out_of_Spec,0,validate; stop on mismatch
+label_check,Is_Nonuniform,0,validate; stop on mismatch
+label_check,Is_Anomaly,0,validate; stop on mismatch
+impute,Line_Speed_mpm,0,train median = 3.2
+impute,Current_ASD,0,train median = 57.915
+impute,Bath_Temp_C,10,train median = 50.06
+impute,Cu_Conc_gL,10,train median = 88.185
+impute,Additive_ppm,10,train median = 3.5
+impute,Jet_Pressure_bar,0,train median = 2.5
+impute,Edge_Current_Bias,0,train median = 0

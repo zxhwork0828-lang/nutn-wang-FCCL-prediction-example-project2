@@ -1,0 +1,73 @@
+{
+  "input_file": "copper_foil_1000.csv",
+  "split_strategy": "chronological 70/15/15; floor boundaries",
+  "train_last_timestamp": "2026-10-08T14:45:00",
+  "validation_last_timestamp": "2026-10-10T04:15:00",
+  "teaching_spec": {
+    "lower_um": 17.0,
+    "upper_um": 19.0,
+    "max_range_um": 0.8
+  },
+  "process_columns": [
+    "Line_Speed_mpm",
+    "Current_ASD",
+    "Bath_Temp_C",
+    "Cu_Conc_gL",
+    "Additive_ppm",
+    "Jet_Pressure_bar",
+    "Edge_Current_Bias"
+  ],
+  "imputer_median": {
+    "Line_Speed_mpm": 3.2,
+    "Current_ASD": 57.915,
+    "Bath_Temp_C": 50.06,
+    "Cu_Conc_gL": 88.185,
+    "Additive_ppm": 3.5,
+    "Jet_Pressure_bar": 2.5,
+    "Edge_Current_Bias": 0.0
+  },
+  "scaler_mean": {
+    "Line_Speed_mpm": 3.2174142857142853,
+    "Current_ASD": 58.17741428571429,
+    "Bath_Temp_C": 50.04798571428571,
+    "Cu_Conc_gL": 88.13764285714286,
+    "Additive_ppm": 3.5029571428571424,
+    "Jet_Pressure_bar": 2.478485714285714,
+    "Edge_Current_Bias": 0.04548571428571428
+  },
+  "scaler_scale": {
+    "Line_Speed_mpm": 0.1478069196966234,
+    "Current_ASD": 2.118015924618787,
+    "Bath_Temp_C": 0.5222515265068888,
+    "Cu_Conc_gL": 0.996916718626762,
+    "Additive_ppm": 0.11859040381730311,
+    "Jet_Pressure_bar": 0.16372273974681734,
+    "Edge_Current_Bias": 0.27316749141753116
+  },
+  "shift_categories": [
+    "中班",
+    "早班",
+    "晚班"
+  ],
+  "feature_columns": [
+    "Line_Speed_mpm",
+    "Current_ASD",
+    "Bath_Temp_C",
+    "Cu_Conc_gL",
+    "Additive_ppm",
+    "Jet_Pressure_bar",
+    "Edge_Current_Bias",
+    "Shift_中班",
+    "Shift_早班",
+    "Shift_晚班",
+    "Hour_sin",
+    "Hour_cos",
+    "Line_Speed_mpm_was_missing",
+    "Current_ASD_was_missing",
+    "Bath_Temp_C_was_missing",
+    "Cu_Conc_gL_was_missing",
+    "Additive_ppm_was_missing",
+    "Jet_Pressure_bar_was_missing",
+    "Edge_Current_Bias_was_missing"
+  ]
+}

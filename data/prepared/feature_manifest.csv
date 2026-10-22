@@ -1,0 +1,26 @@
+﻿column,role,transformation
+Sample_ID,metadata,unchanged
+Timestamp,metadata,unchanged
+Split,metadata,unchanged
+Line_Speed_mpm,feature,train median + StandardScaler
+Current_ASD,feature,train median + StandardScaler
+Bath_Temp_C,feature,train median + StandardScaler
+Cu_Conc_gL,feature,train median + StandardScaler
+Additive_ppm,feature,train median + StandardScaler
+Jet_Pressure_bar,feature,train median + StandardScaler
+Edge_Current_Bias,feature,train median + StandardScaler
+Shift_中班,feature,one-hot
+Shift_早班,feature,one-hot
+Shift_晚班,feature,one-hot
+Hour_sin,feature,cyclic hour
+Hour_cos,feature,cyclic hour
+Line_Speed_mpm_was_missing,feature,missing indicator
+Current_ASD_was_missing,feature,missing indicator
+Bath_Temp_C_was_missing,feature,missing indicator
+Cu_Conc_gL_was_missing,feature,missing indicator
+Additive_ppm_was_missing,feature,missing indicator
+Jet_Pressure_bar_was_missing,feature,missing indicator
+Edge_Current_Bias_was_missing,feature,missing indicator
+Is_Out_of_Spec,label,unchanged
+Is_Nonuniform,label,unchanged
+Is_Anomaly,label,unchanged
